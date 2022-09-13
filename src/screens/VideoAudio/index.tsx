@@ -13,10 +13,10 @@ export default function App() {
     const [soundUri, setSoundUri] = useState(null);
 
     async function playSound() {
-        console.log('Loading Sound')
+        console.log('Carregando som')
         const { sound } = await Audio.Sound.createAsync({ uri: soundUri })
         setSound(sound)
-        console.log('playing sound')
+        console.log('Tocando som')
         await sound.playAsync()
     }
 
@@ -31,30 +31,30 @@ export default function App() {
 
     async function startRecording() {
         try {
-            console.log('Requesting permissions..');
+            console.log('Requisitando permissões..');
             await Audio.requestPermissionsAsync();
             await Audio.setAudioModeAsync({
                 allowsRecordingIOS: true,
                 playsInSilentModeIOS: true,
             });
-            console.log('Starting recording..');
+            console.log('Iniciando gravação..');
             const { recording } = await Audio.Recording.createAsync(
                 Audio.RECORDING_OPTIONS_PRESET_HIGH_QUALITY
             );
             setRecording(recording);
-            console.log('Recording started');
+            console.log('Gravação iniciada');
         } catch (err) {
-            console.error('Failed to start recording', err);
+            console.error('Erro ao iniciar gravação', err);
         }
     }
 
     async function stopRecording() {
-        console.log('Stopping recording..');
+        console.log('Parando gravação..');
         setRecording(undefined);
         await recording.stopAndUnloadAsync();
         const uri = recording.getURI();
         setSoundUri(uri);
-        console.log('Recording stopped and stored at', uri);
+        console.log('Gravação encerrada e salva em', uri);
     }
 
     return (
