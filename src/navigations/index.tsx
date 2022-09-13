@@ -9,7 +9,7 @@ export default function Navigation() {
   const { access_token } = useAuth();
   return (
   <NavigationContainer>
-    {access_token ? <TabNavigation /> : <LoginNavigation />}
+    {access_token ? <DrawerNavigation /> : <LoginNavigation />}
   </NavigationContainer>
   );
  }

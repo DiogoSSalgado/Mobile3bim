@@ -1,8 +1,8 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import ChatNavigation from "../navigations/chat.navigation"
-import { ChatScreen, PerfilScreen,MapScreen, CameraScreen, ArquivoScreen, QrCodeScreen, SairScreen } from "../screens";
-import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import { ChatScreen, PerfilScreen,MapScreen, CameraScreen, ArquivoScreen, QrCodeScreen, SairScreen, VideoAudioScreen } from "../screens";
+import { Ionicons, MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../styles/colors";
 import Sair from "../screens/Sair";
 import Chat from "../screens/Chat";
@@ -22,7 +22,7 @@ export default function TabNavigation() {
         tabBarInactiveTintColor: colors.white,
       }}
     >
-      <Tab.Screen
+{/*       <Tab.Screen
         name="Perfil"
         component={PerfilScreen}
         options={{
@@ -39,7 +39,7 @@ export default function TabNavigation() {
             <Ionicons name="chatbubbles" size={24} color={colors.white} />
           ),
         }}
-      />
+      /> */}
       <Tab.Screen
        name="Mapa"
        component={MapScreen}
@@ -73,6 +73,15 @@ export default function TabNavigation() {
        options={{
          tabBarIcon: () =>(
           <Ionicons name="qr-code" size={24} color={colors.white} />
+         ),
+       }}
+      />
+      <Tab.Screen
+       name="Video/Áudio"
+       component={VideoAudioScreen}
+       options={{
+         tabBarIcon: () =>(
+          <MaterialCommunityIcons name="video" size={24} color={colors.white} />
          ),
        }}
       />
