@@ -19,7 +19,7 @@ export default function DrawerNavigation() {
                 drawerInactiveTintColor: colors.white,
             }}
         >
-  {/*           <Drawer.Screen
+             <Drawer.Screen
                 name="Perfil"
                 component={PerfilScreen}
                 options={{
@@ -27,7 +27,7 @@ export default function DrawerNavigation() {
                         <Ionicons name="person" size={24} color={colors.white} />
                     ),
                 }}
-            /> */}
+            /> 
 {/*             <Drawer.Screen
                 name="ChatNavigation"
                 component={ChatNavigation}
