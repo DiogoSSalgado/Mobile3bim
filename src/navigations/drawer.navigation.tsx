@@ -1,9 +1,9 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import ChatNavigation from "../navigations/chat.navigation"
-import { ChatScreen, PerfilScreen, MapScreen, SairScreen, QrCodeScreen, CameraScreen, ArquivoScreen, VideoAudioScreen } from "../screens";
+import { ChatScreen, PerfilScreen, MapScreen, SairScreen, QrCodeScreen, CameraScreen, ArquivoScreen, VideoAudioScreen, AcelerometroScreen } from "../screens";
 import colors from "../styles/colors";
-import { Ionicons, Feather, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons, Feather, MaterialCommunityIcons, FontAwesome } from "@expo/vector-icons";
 
 const Drawer = createDrawerNavigator();
 
@@ -97,6 +97,21 @@ export default function DrawerNavigation() {
                     drawerIcon: () => (
                         <MaterialCommunityIcons
                             name="video"
+                            size={24}
+                            color={colors.white}
+                        />
+                    ),
+                }}
+            />
+
+            <Drawer.Screen
+                name="Acelerometro"
+                component={AcelerometroScreen}
+                options={{
+                    drawerLabel: "Acelerômetro",
+                    drawerIcon: () => (
+                        <FontAwesome
+                            name="car"
                             size={24}
                             color={colors.white}
                         />
