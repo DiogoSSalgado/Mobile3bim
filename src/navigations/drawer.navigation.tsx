@@ -1,7 +1,7 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import ChatNavigation from "../navigations/chat.navigation"
-import { ChatScreen, PerfilScreen, MapScreen, SairScreen, QrCodeScreen, CameraScreen, ArquivoScreen, VideoAudioScreen, AcelerometroScreen, PedometroScreen } from "../screens";
+import { ChatScreen, PerfilScreen, MapScreen, SairScreen, QrCodeScreen, CameraScreen, ArquivoScreen, VideoAudioScreen, AcelerometroScreen, PedometroScreen, GyroscopioScreen, MagnetoScreen } from "../screens";
 import colors from "../styles/colors";
 import { Ionicons, Feather, MaterialCommunityIcons, FontAwesome, Foundation } from "@expo/vector-icons";
 
@@ -133,6 +133,37 @@ export default function DrawerNavigation() {
                     ),
                 }}
             />
+
+            <Drawer.Screen
+                name="Gyroscopio"
+                component={GyroscopioScreen}
+                options={{
+                    DrawerLabel: "Gyroscópio",
+                    drawerIcon: () => (
+                        <FontAwesome
+                            name="balance-scale"
+                            size={24}
+                            color={colors.white}
+                        />
+                    ),
+                }}
+            />
+
+            <Drawer.Screen
+                name="Magneto"
+                component={MagnetoScreen}
+                options={{
+                    DrawerLabel: "Magneto",
+                    drawerIcon: () => (
+                        <FontAwesome
+                            name="balance-scale"
+                            size={24}
+                            color={colors.white}
+                        />
+                    ),
+                }}
+            />  
+
             <Drawer.Screen
                 name="Sair"
                 component={SairScreen}
